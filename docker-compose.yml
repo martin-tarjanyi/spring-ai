@@ -1,0 +1,11 @@
+services:
+  mongodb:
+    image: mongodb/mongodb-atlas-local:8.0.10
+    environment:
+      - MONGODB_INITDB_ROOT_USERNAME=user
+      - MONGODB_INITDB_ROOT_PASSWORD=pass
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./docker/mongo_data:/data/db
+      - ./docker/mongo_config:/data/configdb
